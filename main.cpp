@@ -9,34 +9,66 @@ int main() {
 // 1. DynamicArray testi
 DynamicArray arr1;
 arr1.push(10);
-arr1.push(20);
 arr1.push(30);
-arr1.print(); // Çıktı: [10, 20, 30]
+arr1.push(50);
+arr1.push(70);
+arr1.push(90);
+cout<<"arr1 dizisi: " ;arr1.print(); 
 // 2. İndeksleme operatörü
-arr1[1] = 25;
-cout << "arr1[1] = " << arr1[1] << endl; // Çıktı: 25
+arr1[0] = 20;
+arr1[2] = 60;
+arr1[4] = 80;
+cout << "arr1[0] = " << arr1[0] << endl;
+cout << "arr1[2] = " << arr1[2] << endl;
+cout << "arr1[4] = " << arr1[4] << endl; 
 // 3. Birleştirme operatörü
 DynamicArray arr2;
-arr2.push(40);
-arr2.push(50);
+arr2.push(100);
+arr2.push(120);
+arr2.push(140);
+arr2.push(160);
 DynamicArray arr3 = arr1 + arr2;
-arr3.print(); // Çıktı: [10, 25, 30, 40, 50]
+cout<< "arr1 ve arr2 birlestirildi: "; arr3.print(); 
+//== ve != operatörleri
+DynamicArray arr4 = arr1;
+cout << "arr4 dizisi: " << arr4 <<endl;
+arr1[1] = 5;
+cout <<"arr1[1] = 5 olarak degistirildi." << endl;
+
+if(arr1 != arr4){
+    cout <<  endl;
+}
+else{
+    cout << endl;
+}
+
+cout << "arr1 dizisi: " << arr1 << endl;
+cout <<"arr4 dizisi: "<<arr4 << endl;
+
 // 4. SortedArray testi
 SortedArray sorted;
-sorted.push(50);
-sorted.push(10);
-sorted.push(30);
-sorted.push(20);
-sorted.print(); // Çıktı: [10, 20, 30, 50]
-int index = sorted.binarySearch(30);
-cout << "30 bulundu, indeks: " << index << endl;
+sorted.push(250);
+sorted.push(260);
+sorted.push(130);
+sorted.push(300);
+sorted.push(247);
+sorted.push(120);
+sorted.print(); 
+int index = sorted.binarySearch(247);
+cout << index << endl;
+int bulunamayanIndex = sorted.binarySearch(500);
+cout << bulunamayanIndex << endl;
 // 5. UniqueArray testi
 UniqueArray unique;
-unique.push(10);
-unique.push(20);
-unique.push(10); // Bu eklenmemeli
-unique.push(30);
-unique.print(); // Çıktı: [10, 20, 30]
-cout << "20 var mı? " << (unique.contains(20) ? "Evet" : "Hayır") << endl;
+unique.push(40);
+unique.push(50);
+unique.push(60);
+unique.push(70);
+cout << "UniqueArray içeriği: "; unique.print();
+unique.push(60);
+unique.push(80);
+cout<< "UniqueArray içeriği: "; unique.print();
+cout << "60 var mi? " << (unique.contains(60) ? "Evet" : "Hayir") << endl;
+cout << "90 var mi? " << (unique.contains(90) ? "Evet" : "Hayir") << endl;
 return 0;
 }
