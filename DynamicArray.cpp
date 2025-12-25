@@ -1,4 +1,5 @@
 #include "DynamicArray.h"
+#include <iostream>
 
 
 //varsayılan constructor
@@ -107,7 +108,7 @@ void DynamicArray::print() const{
             cout<< ",";
         }
     }
-    cout<<"]";
+    cout<<"]"<< endl;
 }
 //indeksleme operatörü
 int& DynamicArray::operator[](int index){
