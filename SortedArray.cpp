@@ -2,8 +2,8 @@
 #include <iostream>
 //Constructorlar
 SortedArray :: SortedArray() :DynamicArray(){}
-SortedArray :: SortedArray(int capasity): DynamicArray(){}
-SortedArray :: SortedArray(const SortedArray& other) : DynamicArray(){}
+SortedArray :: SortedArray(int capasity): DynamicArray(capasity){}
+SortedArray :: SortedArray(const SortedArray& other) : DynamicArray(other){}
 
 void SortedArray :: push(int deger){
     DynamicArray::push(deger);
