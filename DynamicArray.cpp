@@ -59,7 +59,7 @@ void DynamicArray::pop(){
         size = size -1;
 
     }else{
-        cout<<"Dizi boş, eleman silinemez!!"<<endl;
+        cout<<"Dizi bos, eleman silinemez!!"<<endl;
     }
 }
 //get
@@ -73,7 +73,7 @@ int DynamicArray::get(int index) const{
 //set
 void DynamicArray::set(int index, int value){
     if (index<0 || index >= size){
-        cout<< "Aranan değerde değiştirilecek veri yok"<<endl;
+        cout<< "Aranan degerde degistirilecek veri yok"<<endl;
     }else{
         data[index] = value;
     }
@@ -114,7 +114,8 @@ void DynamicArray::print() const{
 int& DynamicArray::operator[](int index){
     if (index<0|| index>=size)
     {
-        cout<<"Belirtilen indeks geçersiz"<< endl;
+        cout<<"Belirtilen indeks gecersiz"<< endl;
+        return data[0];
     }
     return data[index];
 }
@@ -149,28 +150,24 @@ DynamicArray DynamicArray::operator+(const DynamicArray& orijinal) const{
 //iki dizinin eşitlik operatörü
 bool DynamicArray::operator==(const DynamicArray& orijinal) const{
     if (size != orijinal.size){
-        cout<< "Karşılaştırılan dizilerin boyutu aynı değil";
         return false;
     }
     for(int i = 0; i < size; i++){
         if (data[i] != orijinal.data[i]){
-            cout<< "Diziler birbirine eşit değil";
             return false;
         }
     }
-    cout<< "Karşılaştırılan diziler birbirine eşittir";
+   
     return true;
     
 }
 //iki dizinin fark operatörü
 bool DynamicArray::operator!=(const DynamicArray& orijinal)const{
     if (size != orijinal.size){
-        cout<< "Karşılaştırılan dizilerin boyutları aynı değil";
         return true;
     }
     for(int i = 0; i< size; i++){
         if(data[i] != orijinal.data[i]){
-            cout<< "Karşılaştırılan diziler birbirine eşit değildir";
             return true;
         }
     }
